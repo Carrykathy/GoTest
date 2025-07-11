@@ -12,6 +12,20 @@ func TestAdd(t *testing.T) {
 	}
 }
 
+func TestMul(t *testing.T) {
+	t.Run("pos", func(t *testing.T) {
+		if Mul(2, 3) != 6 {
+			t.Error("2*3 should be 6")
+		}
+	})
+
+	t.Run("neg", func(t *testing.T) {
+		if Mul(2, -3) != -6 {
+			t.Fatal("failed")
+		}
+	})
+}
+
 /*
 运行go test命令，可以运行当前目录下所有的*_test.go文件中的测试用例，并输出测试结果
 
